@@ -72,6 +72,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="vue," />
 
 
 
@@ -84,16 +85,19 @@
 
 
 
-<meta name="description" content="等闲变却故人心，却道故人心易变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+
+<meta name="description" content="vue嵌套路由 母模板设置（选择模板，添加&amp;lt;router-view/&amp;gt;来设置显示路由的位置，添加&amp;lt;router-link to=&amp;quot;path&amp;quot;&amp;gt;&amp;lt;/router-link&amp;gt;来放切换子路由的链接） 子模板设置（写子模板，可以用路由传参的方法来设置不同的信息） 路由配置（配置router的index.js文件）   母模板设置： 123456789">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue嵌套路由">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/vue嵌套路由/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="等闲变却故人心，却道故人心易变">
+<meta property="og:description" content="vue嵌套路由 母模板设置（选择模板，添加&amp;lt;router-view/&amp;gt;来设置显示路由的位置，添加&amp;lt;router-link to=&amp;quot;path&amp;quot;&amp;gt;&amp;lt;/router-link&amp;gt;来放切换子路由的链接） 子模板设置（写子模板，可以用路由传参的方法来设置不同的信息） 路由配置（配置router的index.js文件）   母模板设置： 123456789">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-20T06:44:14.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="等闲变却故人心，却道故人心易变">
+<meta name="twitter:title" content="vue嵌套路由">
+<meta name="twitter:description" content="vue嵌套路由 母模板设置（选择模板，添加&amp;lt;router-view/&amp;gt;来设置显示路由的位置，添加&amp;lt;router-link to=&amp;quot;path&amp;quot;&amp;gt;&amp;lt;/router-link&amp;gt;来放切换子路由的链接） 子模板设置（写子模板，可以用路由传参的方法来设置不同的信息） 路由配置（配置router的index.js文件）   母模板设置： 123456789">
 
 
 
@@ -111,7 +115,7 @@
   };
 </script>
 
-  <title> 归档 | Hexo </title>
+  <title> vue嵌套路由 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -132,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -230,288 +234,153 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/vue嵌套路由/" itemprop="url">
-              
-                <span itemprop="name">vue嵌套路由</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T13:51:52+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/md常用/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T11:20:25+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/js/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T11:18:28+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/vue/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T11:17:09+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/20/vue生命周期(钩子函数)/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-20T11:15:31+08:00"
-              content="2018-06-20" >
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/13/hexo代码托管/" itemprop="url">
-              
-                <span itemprop="name">hexo代码托管到github和coding.net</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-13T14:27:11+08:00"
-              content="2018-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/11/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-11T19:26:14+08:00"
-              content="2018-06-11" >
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                vue嵌套路由
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-06-20T13:51:52+08:00" content="2018-06-20">
+              2018-06-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/06/20/vue嵌套路由/" class="leancloud_visitors" data-flag-title="vue嵌套路由">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="vue嵌套路由"><a href="#vue嵌套路由" class="headerlink" title="vue嵌套路由"></a>vue嵌套路由</h3><ol>
+<li>母模板设置（选择模板，添加<code>&lt;router-view/&gt;</code>来设置显示路由的位置，添加<code>&lt;router-link to=&quot;path&quot;&gt;&lt;/router-link&gt;</code>来放切换子路由的链接）</li>
+<li>子模板设置（写子模板，可以用路由传参的方法来设置不同的信息）</li>
+<li>路由配置（配置router的index.js文件）</li>
+</ol>
+<blockquote>
+<p>母模板设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;template&gt;</span><br><span class="line">&gt; 	&lt;div class=&quot;nav&quot;&gt;</span><br><span class="line">&gt; 		&lt;router-link to=&quot;&apos;/parent/children/&apos; + item.id&quot; v-for=&quot;item in childrenObj&quot;&gt;	</span><br><span class="line">&gt;         	&#123;&#123;item.name&#125;&#125;    //子模板切换</span><br><span class="line">&gt;          &lt;/router-link&gt;</span><br><span class="line">&gt; 	&lt;/div&gt;</span><br><span class="line">&gt; 	&lt;div class=&quot;child&quot;&gt;</span><br><span class="line">&gt; 		&lt;router-view/&gt;       //子模板显示位置</span><br><span class="line">&gt; 	&lt;/div&gt;</span><br><span class="line">&gt; &lt;/template&gt;</span><br><span class="line">&gt; &lt;script&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt; &lt;/script&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>子模板设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;template&gt;</span><br><span class="line">&gt; 	&lt;h3&gt; title &lt;/h3&gt;</span><br><span class="line">&gt; 	&lt;img :src=&quot;item.src&quot;&gt;</span><br><span class="line">&gt; 	&lt;p&gt;&#123;&#123;item.msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">&gt; 	&lt;a href=&quot;javascript:;&quot; @click=&quot;back&quot;&gt;返回&lt;/a&gt;</span><br><span class="line">&gt; &lt;/template&gt;</span><br><span class="line">&gt; &lt;script&gt;</span><br><span class="line">&gt; 	export default &#123;</span><br><span class="line">&gt;         props: [&apos;item&apos;],</span><br><span class="line">&gt;         methods: &#123;</span><br><span class="line">&gt;             back() &#123;</span><br><span class="line">&gt;                 this.$router.back()</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt; &lt;/script&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>路由配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; index.js</span><br><span class="line">&gt; import parent from &apos;@/components/parent&apos;</span><br><span class="line">&gt; import children from &apos;@/components/children&apos;</span><br><span class="line">&gt; </span><br><span class="line">&gt; export default new Router(&#123;</span><br><span class="line">&gt;     routes: [</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;             path: &apos;/&apos;,</span><br><span class="line">&gt;             component: parent,</span><br><span class="line">&gt;             children: [</span><br><span class="line">&gt;                 &#123;</span><br><span class="line">&gt;                     path: &apos;children/:id&apos;,</span><br><span class="line">&gt;                     component: children</span><br><span class="line">&gt;                 &#125;</span><br><span class="line">&gt;             ]</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     ]</span><br><span class="line">&gt; &#125;)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/GeekNotes.jpg" alt="TianRanDe wechat" style="width: 200px; max-width: 100%;"/>
+    <div>我在公众号与你分享更多内容</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag">#vue</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/20/md常用/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -519,6 +388,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -538,8 +411,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/xirong.jpg"
@@ -582,6 +464,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue嵌套路由"><span class="nav-number">1.</span> <span class="nav-text">vue嵌套路由</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -694,11 +587,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
