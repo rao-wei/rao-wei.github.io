@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="vue生命周期(钩子函数)  create - mount - update - destroy 四个节点 每个节点有前后 beforeCreate - created beforeMount - mounted beforeUpdate - updated beforeDestroy - destroyed()  vue开发环境安装配置  node.js安装 设置淘宝镜像 npm config">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-20T03:11:34.977Z">
+<meta property="og:updated_time" content="2018-06-22T03:29:43.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="vue生命周期(钩子函数)  create - mount - update - destroy 四个节点 每个节点有前后 beforeCreate - created beforeMount - mounted beforeUpdate - updated beforeDestroy - destroyed()  vue开发环境安装配置  node.js安装 设置淘宝镜像 npm config">
@@ -326,7 +326,7 @@
 <p>在ruoter下面的index.js中配置</p>
 <blockquote>
 <p>先将需要跳转的页面导入依赖  <code>import index from &#39;@/components/index&#39;</code>    其中@代表的是src这个目录</p>
-<p>然后再在export default new Router里面配置路径 <figure class="highlight plain"><figcaption><span>'/',component: '/index'&#125;,&#123;path: '*', component: '/index'&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; 其中配置`path: &apos;*&apos; `可以使路由在输入没有的hash时重新定向到设置的页面</span><br><span class="line"></span><br><span class="line">2. 路由传参 </span><br><span class="line"></span><br><span class="line">   &gt; </span><br><span class="line"></span><br><span class="line">3. 路由动画</span><br><span class="line"></span><br><span class="line">   &gt; 在template 中使用 transition 这个标签来放置动画的具体元素</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; `&lt;transition name=&apos;sport-name&apos;&gt;&lt;router-view&gt;&lt;/transition&gt;`</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 然后再style 中设置动画样式  其中</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; &gt; `.sprot-name-leave-active&#123;&#125;`设置刚切走的页面的最终样式</span><br><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; `.sport-name-enter&#123;&#125;`设置刚切入的页面的初始样式</span><br><span class="line"></span><br><span class="line">4. 路由回调函数</span><br><span class="line"></span><br><span class="line">   &gt; 路由局部前置钩子函数</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 在router里面的配置路径的地方加上 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后再在export default new Router里面配置路径 <figure class="highlight plain"><figcaption><span>'/',component: '/index'&#125;,&#123;path: '*', component: '/index'&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; 其中配置`path: &apos;*&apos; `可以使路由在输入没有的hash时重新定向到设置的页面</span><br><span class="line"></span><br><span class="line">2. 路由传参 </span><br><span class="line"></span><br><span class="line">   &gt; 1. 通过name传参 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;    &gt; </span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 2. 通过params传参</span><br><span class="line">   &gt;</span><br><span class="line">   &gt;    &gt; :绑定to name和路由中配置的一致，params通过key值调用</span><br><span class="line"></span><br><span class="line">3. 路由动画</span><br><span class="line"></span><br><span class="line">   &gt; 在template 中使用 transition 这个标签来放置动画的具体元素</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; `&lt;transition name=&apos;sport-name&apos;&gt;&lt;router-view&gt;&lt;/transition&gt;`</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 然后再style 中设置动画样式  其中</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; &gt; `.sprot-name-leave-active&#123;&#125;`设置刚切走的页面的最终样式</span><br><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; `.sport-name-enter&#123;&#125;`设置刚切入的页面的初始样式</span><br><span class="line"></span><br><span class="line">4. 路由回调函数</span><br><span class="line"></span><br><span class="line">   &gt; 路由局部前置钩子函数</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 在router里面的配置路径的地方加上 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -344,13 +344,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; 路由全局前置钩子函数</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
-<p>router.beforeEach(async (to, from, next) =&gt; {<br>  console.log(‘我是路由全局前置钩子函数-每次切换路由之前都触发’,to,from)<br>  // if(to.path != ‘/signin’){<br>  //   let res = await axios.get(‘/static/check.json’)<br>  //   res = res.data<br>  //   if(res == 1){<br>  //     next()<br>  //   }else{<br>  //     router.push(‘/signin’)<br>  //   }<br>  // }else{<br>  //   next()<br>  // }<br>  next()<br>})<br><code>`</code></p>
-<p>路由全局后置钩子函数</p>
+<p>router.beforeEach(async (to, from, next) =&gt; {<br>  console.log(‘我是路由全局前置钩子函数-每次切换路由之前都触发’,to,from)<br>  // if(to.path != ‘/signin’){<br>  //   let res = await axios.get(‘/static/check.json’)<br>  //   res = res.data<br>  //   if(res == 1){<br>  //     next()<br>  //   }else{<br>  //     router.push(‘/signin’)<br>  //   }<br>  // }else{<br>  //   next()<br>  // }<br>  next()<br>})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">   &gt;</span><br><span class="line">   &gt; 路由全局后置钩子函数</span><br><span class="line"></span><br><span class="line">5. 嵌套路由</span><br><span class="line"></span><br><span class="line">6. 单页面多路由区域操作</span><br><span class="line"></span><br><span class="line">   一个页面有多个router-view  ，先给router起名字，可以有一个不起名字作为默认</span><br><span class="line"></span><br><span class="line">7. </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 非父子组件传值</span><br><span class="line"></span><br><span class="line">1. 总线传值/发布订阅模式/观察者模式</span><br><span class="line">2. vuex</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 插槽slot</span><br><span class="line"></span><br><span class="line">组件在别处引用的时候，在引用的结构下写的内容可以通过slot在组件中显示 可以放html标签</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
-<li><p>嵌套路由</p>
-</li>
 </ol>
+<p><template><br>    <rw-btn :type="primary" :round="true"><br>        默认按钮<br>    </rw-btn><br></template></p>
+<p><script><br>    import rw-btn from ‘@/components/rw-btn’<br>    export default {<br>        name: parent,<br>        component: {<br>            children<br>        }<br>    }<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p><template><br>    <button :class="{'primary': type=='primary', 'round': round}"><br>        <slot></slot><br>    </button><br></template></p>
+<p><script><br>    export default {<br>        name: children,<br>        props:[‘type’, ‘round’, ‘size’]<br>    }<br></script></p>
+<p><style scoped><br>    a {<br>        color: black;<br>    }<br></style><br><code>`</code></p>
 
       
     </div>
@@ -450,7 +453,7 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/uploads/xirong.jpg"
+               src="/uploads/avatar.png"
                alt="TianRanDe" />
           <p class="site-author-name" itemprop="name">TianRanDe</p>
           <p class="site-description motion-element" itemprop="description">等闲变却故人心，却道故人心易变</p>
@@ -458,7 +461,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

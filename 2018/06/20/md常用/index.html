@@ -91,14 +91,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="这个是最高标题  ============= 这个是次级标题  这是 H 1标题(用1个 #)这是 H 2 标题(用2个 #)这是 H 3 标题(用3个 #)这是 H 4 标题(用4个 #)这是 H 5标题(用5个 #)这是 H 6 标题(用6个 #) THIS IS A BLOCKQUOTE WITH TWO  PARAGRAPHS .  这个是第二行   可以只在段落的第一行加上&amp;gt;来做引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/path/to/img.jpg">
-<meta property="og:image" content="http://yoursite.com/path/to/img.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/06/20/md常用/url/to/image">
-<meta property="og:updated_time" content="2018-06-15T07:14:33.548Z">
+<meta property="og:updated_time" content="2018-06-22T03:32:31.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="这个是最高标题  ============= 这个是次级标题  这是 H 1标题(用1个 #)这是 H 2 标题(用2个 #)这是 H 3 标题(用3个 #)这是 H 4 标题(用4个 #)这是 H 5标题(用5个 #)这是 H 6 标题(用6个 #) THIS IS A BLOCKQUOTE WITH TWO  PARAGRAPHS .  这个是第二行   可以只在段落的第一行加上&amp;gt;来做引">
-<meta name="twitter:image" content="http://yoursite.com/path/to/img.jpg">
 
 
 
@@ -368,9 +364,9 @@
 <p>Use the <code>printf()</code> function.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p></p><p>Use the <code>printf()</code> function.</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</span><br><span class="line"></span><br><span class="line"> ``There is a literal backtick (`) here.``</span><br></pre></td></tr></table></figure><p></p>
 <p></p><p><code>There is a literal backtick (`) here.</code></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">### 图片</span><br><span class="line"></span><br><span class="line">很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</span><br><span class="line"></span><br><span class="line">Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： *行内式*和*参考式*。</span><br><span class="line"></span><br><span class="line">行内式的图片语法看起来像是：</span><br></pre></td></tr></table></figure><p></p>
-<p><img src="/path/to/img.jpg" alt="Alt text"></p>
-<p><img src="/path/to/img.jpg" alt="Alt text" title="Optional title"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参考式的图片语法则长得像这样：</span><br></pre></td></tr></table></figure></p>
-<p><img src="url/to/image" alt="Alt text" title="Optional title attribute"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</span><br></pre></td></tr></table></figure></p>
+<p>!<a href="img.jpg">Alt text</a></p>
+<p>!<a href="img.jpg" title="Optional title">Alt text</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参考式的图片语法则长得像这样：</span><br></pre></td></tr></table></figure></p>
+<p>!<a href="img.jpg/to/image" title="Optional title attribute">Alt text</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</span><br></pre></td></tr></table></figure></p>
 <p><code>`</code></p>
 <table>
 <thead>
@@ -497,7 +493,7 @@
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/uploads/xirong.jpg"
+               src="/uploads/avatar.png"
                alt="TianRanDe" />
           <p class="site-author-name" itemprop="name">TianRanDe</p>
           <p class="site-description motion-element" itemprop="description">等闲变却故人心，却道故人心易变</p>
@@ -505,7 +501,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
