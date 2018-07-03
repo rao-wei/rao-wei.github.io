@@ -306,9 +306,12 @@
 
       
         
-          
-            <center> 居中文本</center>
-          
+          <p>vue钩子函数和开发环境配置以及路由常用功能
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/29/格式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -408,27 +411,12 @@
 
       
         
-          
-            <h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><h4 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h4><p>git线上新建分支：index - swiper 存放轮播图</p>
-<p>本地仓库：把新建的分支拉取到本地<code>git pull</code> </p>
-<p>切换分支：<code>git checkout  index - swiper</code>  </p>
-<p>第三方轮播插件：vue-awesome-swiper</p>
-<blockquote>
-<p><code>npm install vue-awesome-swiper@2.6.7 --save</code></p>
-<p>main . js 中全局配置</p>
-<p>引入依赖</p>
-<p><code>import VueAwesomeSwiper from &#39;vue-awesome-swiper&#39;</code></p>
-<p>引入样式</p>
-<p><code>improt &#39;swiper/dis/css/swiper.css&#39;</code></p>
-<p>使用</p>
-<p><code>Vue.use(&#39;VueVwesomeVwiper&#39;)</code></p>
-<p>组件中使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;swiper&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt; 	&lt;swiper-slide&gt;&lt;/swiper-slide&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt; &lt;/swiper&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-</blockquote>
-
-          
+          <h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/28/首页/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -528,58 +516,12 @@
 
       
         
-          
-            <h2 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h2><p><img src="D:\blog\source\_posts\接口.png" alt="接口"></p>
-<h3 id="接口配置"><a href="#接口配置" class="headerlink" title="接口配置"></a>接口配置</h3><ol>
-<li><p>前端调用接口： 先获取后台接口文档</p>
-<blockquote>
-<p>所有的接口地址前面都是 /api/v1</p>
-<p>文章接口</p>
-<p>获取单个文章<br>请求地址: /article?id=？<br>请求方法: get</p>
-<p>获取文章列表<br>请求地址: /article?p=?<br>请求方法: get</p>
-<p>新增文章<br>请求地址: /article/save<br>请求方法: post<br>请求参数:<br>title - 标题<br>content - 文章内容</p>
-<p>图片接口</p>
-<p>获取图片列表<br>请求地址: /img<br>请求方法: get</p>
-<p>删除图片<br>请求地址: /img/del?id=?<br>请求方法: get</p>
-<p>新增图片<br>请求地址: /img/save<br>请求方法: post<br>请求参数:<br>file - 文件</p>
-<p>城市接口</p>
-<p>获取城市列表<br>请求地址: /citylist<br>请求方法: get</p>
-</blockquote>
-</li>
-<li><p>axios插件安装</p>
-</li>
-</ol>
-<blockquote>
-<p>// 默认调接口的位置</p>
-<p>axios.defaults.baseURL = “/api/v1”</p>
-<p>// 如果后端禁止你传json，要求用application/x-www-form-urlencoded,就加这些代码</p>
-<p>import qs from ‘qs’</p>
-<p>// post传参序列化</p>
-<p>axios.interceptors.request.use((config) =&gt; {</p>
-<p>  config.data = qs.stringify(config.data)</p>
-<p>  return config</p>
-<p>},function (error){</p>
-<p>  return Promise.reject(error)</p>
-<p>})</p>
-<p>//设置全局方法</p>
-<p>Vue.prototype.$axios = axios </p>
-<p>//数据在渲染之前加载</p>
-<p>mounted() {</p>
-<p>​      this.$axios.get(‘/article?p=’ + this.p).then(res =&gt; {</p>
-<p>​        let data = res.data;</p>
-<p>​        data = data.data;</p>
-<p>​        this.list = data.data</p>
-<p>​        this.total = data.totalPages</p>
-<p>​        console.log(this.list);</p>
-<p>​        console.log(this.total);</p>
-<p>​      })</p>
-<p>   }</p>
-</blockquote>
-<h3 id="新增、删除、修改文章接口"><a href="#新增、删除、修改文章接口" class="headerlink" title="新增、删除、修改文章接口"></a>新增、删除、修改文章接口</h3><h4 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h4><ol>
-<li>配置vue</li>
-</ol>
-<h4 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h4><h4 id="修改文章"><a href="#修改文章" class="headerlink" title="修改文章"></a>修改文章</h4><h3 id="添加、删除图片"><a href="#添加、删除图片" class="headerlink" title="添加、删除图片"></a>添加、删除图片</h3><h4 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h4><h4 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h4><h3 id="上滑刷新列表"><a href="#上滑刷新列表" class="headerlink" title="上滑刷新列表"></a>上滑刷新列表</h3><h3 id="搜索延时加载"><a href="#搜索延时加载" class="headerlink" title="搜索延时加载"></a>搜索延时加载</h3>
-          
+          <h2 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h2><p><img src="D:\blog\source\_posts\接口.png" alt="接口"></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/27/接口调用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -679,35 +621,13 @@
 
       
         
-          
-            <p><img src="D:\blog\source\_posts\截图.jpg" alt="截图"></p>
-<h3 id="设计图"><a href="#设计图" class="headerlink" title="设计图"></a>设计图</h3><p>依赖包下载：</p>
-<p><code>npm install stylus --save</code></p>
-<p><code>npm install stylus-loader --save</code></p>
-<p>组件开发：</p>
-<p>header.vue组件开发</p>
-<ol>
-<li>在components下面添加header.vue页面</li>
-<li>在Home.vue上引入header.vue <code>import HomeHeader from &#39;./components/Header&#39;</code></li>
-<li>components 上添加HomeHeader组件</li>
-</ol>
-<p>header分为三个部分 left input right  </p>
-<h3 id="iconfont的使用"><a href="#iconfont的使用" class="headerlink" title="iconfont的使用"></a>iconfont的使用</h3><p>在阿里巴巴矢量图库下载代码，将代码文件中的字体文件保存到assets的styles中新建一个iconfont放字体文件，iconfont.css放在styles中，将iconfont.css中的字体地址更改前面加上./icoonfont</p>
-<p>在main.js中导入iconfont.css</p>
-<p><code>import &#39;@/assets/styles/iconfont.css&#39;</code></p>
-<p>在需要使用的html文档中给包裹图片的div或span等标签加上iconfont类名内容写对应图标的代码就可以<code>&lt;span&gt;&amp;#xe600;&lt;/span&gt;</code></p>
-<h3 id="使用stylus设置css变量"><a href="#使用stylus设置css变量" class="headerlink" title="使用stylus设置css变量"></a>使用stylus设置css变量</h3><p>在styles文件夹下新建一个varibles.styl的全局stylus文件</p>
-<p>在需要使用的style中引入<code>@import &#39;~styles/varibles.styl&#39;</code></p>
-<blockquote>
-<p>提示：styles是在build下面的webpack.base文件下设置的快捷地址</p>
-<p>在resolve中新增 <code>&#39;styles&#39;: resolve(&#39;src/assets/styles&#39;)</code></p>
-</blockquote>
-<p>在varibles.styl中定义变量,style中就可以直接使用这个变量了</p>
-<blockquote>
-<p>\$bgColor =  #00bcd4</p>
-</blockquote>
-
-          
+          <p><img src="D:\blog\source\_posts\截图.jpg" alt="截图"></p>
+<p>使用vue开发去哪网
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/22/vue去哪儿网站实战/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -807,13 +727,12 @@
 
       
         
-          
-            <h3 id="vue爬坑之旅1"><a href="#vue爬坑之旅1" class="headerlink" title="vue爬坑之旅1"></a>vue爬坑之旅1</h3><p>​    最近打算用vue实现单页面应用的功能，用到的主要有vue+vue-router+vue-axios+vuex在这个过程中记录下使用vue的问题。</p>
-<p>​    首先是功能需求上，第一步是主页功能：<img src="D:\blog\source\_posts\indexPage.png" alt="indexPage"></p>
-<p>主页显示导航和预览文章，当点击文章的时候进入文章正文，</p>
-<p>其中导航和预览文章可以分别作为一个组件，在router里面注册</p>
-
-          
+          <h3 id="vue爬坑之旅1"><a href="#vue爬坑之旅1" class="headerlink" title="vue爬坑之旅1"></a>vue爬坑之旅1</h3><p>​    最近打算用vue实现单页面应用的功能，用到的主要有vue+vue-router+vue-axios+vuex在这个过程中记录下使用vue的问题。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/22/vue-js爬坑之旅/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -913,18 +832,15 @@
 
       
         
-          
-            <p>组件的作用： 相同的东西做成一个模块，方便维护，方便修改</p>
+          <p>组件的作用： 相同的东西做成一个模块，方便维护，方便修改</p>
 <p>组件后缀  vue  放在components文件夹下面</p>
 <p>每一个模板都有一个template   一个 script  一个 style</p>
-<p>经常用到的可以做成组件</p>
-<h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	//&lt;div&gt;购物车&lt;/div&gt;</span><br><span class="line">	&lt;titleBox :tit=&quot;title&quot;&gt;   &lt;titleBox&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	import titleBox from &apos;./title&apos;</span><br><span class="line">	</span><br><span class="line">	export default &#123;</span><br><span class="line">	   components: &#123;</span><br><span class="line">           titleBox</span><br><span class="line">	   &#125;</span><br><span class="line">        data () &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                title: &apos;购物车&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-          
+<p>经常用到的可以做成组件
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/21/vue组件化开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1024,41 +940,12 @@
 
       
         
-          
-            <h3 id="vue嵌套路由"><a href="#vue嵌套路由" class="headerlink" title="vue嵌套路由"></a>vue嵌套路由</h3><ol>
-<li>母模板设置（选择模板，添加<code>&lt;router-view/&gt;</code>来设置显示路由的位置，添加<code>&lt;router-link to=&quot;path&quot;&gt;&lt;/router-link&gt;</code>来放切换子路由的链接）</li>
-<li>子模板设置（写子模板，可以用路由传参的方法来设置不同的信息）</li>
-<li>路由配置（配置router的index.js文件）</li>
-</ol>
-<blockquote>
-<p>母模板设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;template&gt;</span><br><span class="line">&gt; 	&lt;div class=&quot;nav&quot;&gt;</span><br><span class="line">&gt; 		&lt;router-link to=&quot;&apos;/parent/children/&apos; + item.id&quot; v-for=&quot;item in childrenObj&quot;&gt;	</span><br><span class="line">&gt;         	&#123;&#123;item.name&#125;&#125;    //子模板切换</span><br><span class="line">&gt;          &lt;/router-link&gt;</span><br><span class="line">&gt; 	&lt;/div&gt;</span><br><span class="line">&gt; 	&lt;div class=&quot;child&quot;&gt;</span><br><span class="line">&gt; 		&lt;router-view/&gt;       //子模板显示位置</span><br><span class="line">&gt; 	&lt;/div&gt;</span><br><span class="line">&gt; &lt;/template&gt;</span><br><span class="line">&gt; &lt;script&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt; &lt;/script&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>子模板设置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;template&gt;</span><br><span class="line">&gt; 	&lt;h3&gt; title &lt;/h3&gt;</span><br><span class="line">&gt; 	&lt;img :src=&quot;item.src&quot;&gt;</span><br><span class="line">&gt; 	&lt;p&gt;&#123;&#123;item.msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">&gt; 	&lt;a href=&quot;javascript:;&quot; @click=&quot;back&quot;&gt;返回&lt;/a&gt;</span><br><span class="line">&gt; &lt;/template&gt;</span><br><span class="line">&gt; &lt;script&gt;</span><br><span class="line">&gt; 	export default &#123;</span><br><span class="line">&gt;         props: [&apos;item&apos;],</span><br><span class="line">&gt;         methods: &#123;</span><br><span class="line">&gt;             back() &#123;</span><br><span class="line">&gt;                 this.$router.back()</span><br><span class="line">&gt;             &#125;</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt; &lt;/script&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>路由配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; index.js</span><br><span class="line">&gt; import parent from &apos;@/components/parent&apos;</span><br><span class="line">&gt; import children from &apos;@/components/children&apos;</span><br><span class="line">&gt; </span><br><span class="line">&gt; export default new Router(&#123;</span><br><span class="line">&gt;     routes: [</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;             path: &apos;/&apos;,</span><br><span class="line">&gt;             component: parent,</span><br><span class="line">&gt;             children: [</span><br><span class="line">&gt;                 &#123;</span><br><span class="line">&gt;                     path: &apos;children/:id&apos;,</span><br><span class="line">&gt;                     component: children</span><br><span class="line">&gt;                 &#125;</span><br><span class="line">&gt;             ]</span><br><span class="line">&gt;         &#125;</span><br><span class="line">&gt;     ]</span><br><span class="line">&gt; &#125;)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="example"><a href="#example" class="headerlink" title="example:"></a>example:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line">router/index.js</span><br><span class="line">    import Vue from &apos;vue&apos;</span><br><span class="line">    import Router from &apos;vue-router&apos;</span><br><span class="line">    import list from &apos;@/components/list&apos;</span><br><span class="line">    import product from &apos;@/components/product&apos;</span><br><span class="line"></span><br><span class="line">    Vue.use(Router)</span><br><span class="line"></span><br><span class="line">    export default new Router(&#123;</span><br><span class="line">      routes: [</span><br><span class="line">        &#123;</span><br><span class="line">          path: &apos;/list&apos;,</span><br><span class="line">          name: &apos;list&apos;,</span><br><span class="line">          component: list,</span><br><span class="line">          children: [</span><br><span class="line">            &#123;</span><br><span class="line">              path: &apos;product/:id&apos;,</span><br><span class="line">              component: product</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;)</span><br><span class="line">parent:components/list.vue</span><br><span class="line">	&lt;template&gt;</span><br><span class="line">      &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;</span><br><span class="line">          &lt;router-link :to=&quot;&apos;/list/product/&apos;+ item.hash&quot; :key=&quot;index&quot; v-for=&quot;(item,index) of list&quot; @click.native=&quot;open(index)&quot;&gt;</span><br><span class="line">            &#123;&#123;item.name&#125;&#125;</span><br><span class="line">          &lt;/router-link&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;</span><br><span class="line">          &lt;router-view&quot; :list=&quot;list&quot;/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">     &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">      name: &apos;list&apos;,</span><br><span class="line">      data () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list: [</span><br><span class="line">            &#123;</span><br><span class="line">              name: &apos;苹果x&apos;,</span><br><span class="line">              price: &apos;8000&apos;,</span><br><span class="line">              spmonth: 139,</span><br><span class="line">              hash: 10000</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              name: &apos;华为荣耀15&apos;,</span><br><span class="line">              price: &apos;6000&apos;,</span><br><span class="line">              spmonth: 5614,</span><br><span class="line">              hash: 10001</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              name: &apos;金立M7&apos;,</span><br><span class="line">              price: &apos;2800&apos;,</span><br><span class="line">              spmonth: 19,</span><br><span class="line">              hash: 10002</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;</span><br><span class="line">    &lt;style scoped&gt;</span><br><span class="line">        h1, h2 &#123;</span><br><span class="line">          font-weight: normal;</span><br><span class="line">        &#125;</span><br><span class="line">        .left &#123;</span><br><span class="line">          float: left;</span><br><span class="line">          width: 400px;</span><br><span class="line">        &#125;</span><br><span class="line">        .right &#123;</span><br><span class="line">          float: right;</span><br><span class="line">          width: 400px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    </span><br><span class="line">children:components/product.vue</span><br><span class="line">	&lt;template&gt;</span><br><span class="line">      &lt;div class=&quot;hello&quot; &gt;</span><br><span class="line">        &lt;h3&gt;&#123;&#123;item.name&#125;&#125;&lt;/h3&gt;</span><br><span class="line">        &lt;p&gt;价格：&#123;&#123;item.price&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;销量：&#123;&#123;item.spmonth&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;a href=&quot;javascript:;&quot; @click=&quot;back&quot;&gt;返回&lt;/a&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">      name: &apos;product&apos;,</span><br><span class="line">      props:[&apos;list&apos;],</span><br><span class="line">      data () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      computed: &#123;</span><br><span class="line">        id() &#123;</span><br><span class="line">            return this.$router.params.id</span><br><span class="line">        &#125;,</span><br><span class="line">        item() &#123; // 判断获取当前页面渲染的数据对象</span><br><span class="line">            for(var i=0;i&lt;this.list.length;i++) &#123;</span><br><span class="line">                if(this.id == this.list[i].hash) &#123;</span><br><span class="line">                    return this.list[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        back() &#123;</span><br><span class="line">          this.$router.back();</span><br><span class="line">        &#125; </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;</span><br><span class="line">    &lt;style scoped&gt;</span><br><span class="line">    h1, h2 &#123;</span><br><span class="line">      font-weight: normal;</span><br><span class="line">    &#125;</span><br><span class="line">    ul &#123;</span><br><span class="line">      list-style-type: none;</span><br><span class="line">      padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    li &#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      margin: 0 10px;</span><br><span class="line">    &#125;</span><br><span class="line">    a &#123;</span><br><span class="line">      color: #42b983;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="父子路由总结"><a href="#父子路由总结" class="headerlink" title="父子路由总结"></a>父子路由总结</h3><ol>
-<li><p>当父子路由之间传值，可将数据放在父路由中 然后用：property属性绑定的方法传递给子组件，子组件使用props接收</p>
-</li>
-<li><p>父路由下设置children路由的时候 path前面不加/，多个子路由用path/:id 的方式表示变量</p>
-</li>
-<li><p>子路由中可以通过 this.$route.params.id可以接收传过来的参数</p>
-</li>
-<li><p>在子路由中通过判断传过来的id值和数据列表中的哪一个hash相等从而选择需要渲染的数据</p>
-</li>
-<li><p>父路由点击切换路由的router-link中to使用：to的方式动态绑定跳转</p>
-</li>
-<li><p>给router-link添加原生点击事件使用修饰符@click.native = “open()”</p>
-</li>
-</ol>
-
-          
+          <h3 id="vue嵌套路由"><a href="#vue嵌套路由" class="headerlink" title="vue嵌套路由"></a>vue嵌套路由
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/20/vue嵌套路由/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1158,102 +1045,14 @@
 
       
         
-          
-            <p>这个是最高标题</p>
+          <p>这个是最高标题</p>
 <p> =============</p>
 <p>这个是次级标题</p>
-<hr>
-<h1 id="这是-H-1标题-用1个"><a href="#这是-H-1标题-用1个" class="headerlink" title="这是 H 1标题(用1个 #)"></a>这是 H 1标题(用1个 #)</h1><h2 id="这是-H-2-标题-用2个"><a href="#这是-H-2-标题-用2个" class="headerlink" title="这是 H 2 标题(用2个 #)"></a>这是 H 2 标题(用2个 #)</h2><h3 id="这是-H-3-标题-用3个"><a href="#这是-H-3-标题-用3个" class="headerlink" title="这是 H 3 标题(用3个 #)"></a>这是 H 3 标题(用3个 #)</h3><h4 id="这是-H-4-标题-用4个"><a href="#这是-H-4-标题-用4个" class="headerlink" title="这是 H 4 标题(用4个 #)"></a>这是 H 4 标题(用4个 #)</h4><h5 id="这是-H-5标题-用5个"><a href="#这是-H-5标题-用5个" class="headerlink" title="这是 H 5标题(用5个 #)"></a>这是 H 5标题(用5个 #)</h5><h6 id="这是-H-6-标题-用6个"><a href="#这是-H-6-标题-用6个" class="headerlink" title="这是 H 6 标题(用6个 #)"></a>这是 H 6 标题(用6个 #)</h6><blockquote>
-<p>THIS IS A BLOCKQUOTE WITH TWO  PARAGRAPHS . </p>
-<p>这个是第二行</p>
-</blockquote>
-<blockquote>
-<p>可以只在段落的第一行加上&gt;来做引用</p>
-<blockquote>
-<p>this is nested blockquote.</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<h2 id="这是引用中的标题"><a href="#这是引用中的标题" class="headerlink" title="这是引用中的标题"></a>这是引用中的标题</h2><ol>
-<li>这是第一行列表</li>
-<li>这是第二行列表</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>给出一些例子代码：</p>
-<p>return shell_exec(“echo $input | $markdown_script”);</p>
-</blockquote>
-<h3 id="列表-无序列表使用-，有序列表使用数字加-如-1"><a href="#列表-无序列表使用-，有序列表使用数字加-如-1" class="headerlink" title="列表( 无序列表使用*  | + |  - ，有序列表使用数字加 .如 1.)"></a>列表( 无序列表使用*  | + |  - ，有序列表使用数字加 .如 1.)</h3><ul>
-<li><p>red</p>
-</li>
-<li><p>green</p>
-</li>
-<li><p>列表项如果包含引用的话将引用缩进：</p>
-</li>
-<li><blockquote>
-<p>this is a block</p>
-</blockquote>
-<p>​    这是一个普通段落：</p>
-<p>​        这是一个代码区块</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is [an example](http://example.com/ &quot;Title&quot;) inline link.</span><br><span class="line"></span><br><span class="line">[This link](http://example.net/) has no title attribute.</span><br></pre></td></tr></table></figure>
-<p>this is <a href="http://example.com/&quot;title&quot;" target="_blank" rel="noopener">an example</a>  in line link</p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[foo]: http://example.com/  &quot;Optional Title Here&quot;</span><br><span class="line">[foo]: http://example.com/  &apos;Optional Title Here&apos;</span><br><span class="line">[foo]: http://example.com/  (Optional Title Here)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<p>  链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
-<p>  下面是一个参考式链接的范例：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google] [1] than from</span><br><span class="line">[Yahoo] [2] or [MSN] [3].</span><br><span class="line"></span><br><span class="line">  [1]: http://google.com/        &quot;Google&quot;</span><br><span class="line">  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;</span><br><span class="line">  [3]: http://search.msn.com/    &quot;MSN Search&quot;</span><br></pre></td></tr></table></figure>
-<p>  如果改成用链接名称的方式写：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google][] than from</span><br><span class="line">[Yahoo][] or [MSN][].</span><br><span class="line"></span><br><span class="line">  [google]: http://google.com/        &quot;Google&quot;</span><br><span class="line">  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;</span><br><span class="line">  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;</span><br></pre></td></tr></table></figure>
-<p>  下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)</span><br><span class="line">than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or</span><br><span class="line">[MSN](http://search.msn.com/ &quot;MSN Search&quot;).</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*single asterisks*</span><br><span class="line"></span><br><span class="line">_single underscores_</span><br><span class="line"></span><br><span class="line">**double asterisks**</span><br><span class="line"></span><br><span class="line">__double underscores__</span><br></pre></td></tr></table></figure>
-<p><em>string em</em></p>
-<p><em>string em</em></p>
-<p><strong>string strong</strong></p>
-<p><strong>string strong</strong></p>
-<hr>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>如果要标记一小段行内代码，你可以用反引号把它包起来（<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Use the <code>printf()</code> function.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p></p><p>Use the <code>printf()</code> function.</p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</span><br><span class="line"></span><br><span class="line"> ``There is a literal backtick (`) here.``</span><br></pre></td></tr></table></figure><p></p>
-<p></p><p><code>There is a literal backtick (`) here.</code></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">### 图片</span><br><span class="line"></span><br><span class="line">很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</span><br><span class="line"></span><br><span class="line">Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： *行内式*和*参考式*。</span><br><span class="line"></span><br><span class="line">行内式的图片语法看起来像是：</span><br></pre></td></tr></table></figure><p></p>
-<p>!<a href="img.jpg">Alt text</a></p>
-<p>!<a href="img.jpg" title="Optional title">Alt text</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参考式的图片语法则长得像这样：</span><br></pre></td></tr></table></figure></p>
-<p>!<a href="img.jpg/to/image" title="Optional title attribute">Alt text</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</span><br></pre></td></tr></table></figure></p>
-<p><code>`</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">商品名称</th>
-<th style="text-align:center">商品价格</th>
-<th style="text-align:center">商品日期</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">iPhone X</td>
-<td style="text-align:center">7800</td>
-<td style="text-align:center">2018-04-09</td>
-</tr>
-<tr>
-<td style="text-align:center">魅族PRo7</td>
-<td style="text-align:center">4800</td>
-<td style="text-align:center">2018-05-06</td>
-</tr>
-<tr>
-<td style="text-align:center">华为荣耀15</td>
-<td style="text-align:center">6800</td>
-<td style="text-align:center">2018-03-09</td>
-</tr>
-</tbody>
-</table>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/20/md常用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1353,58 +1152,15 @@
 
       
         
-          
-            <h3 id="j-s-基础"><a href="#j-s-基础" class="headerlink" title="j s 基础"></a>j s 基础</h3><ol>
-<li>几个面试题</li>
-<li>如何搞定所有的面试题</li>
-</ol>
-<h6 id="几个面试题"><a href="#几个面试题" class="headerlink" title="几个面试题"></a>几个面试题</h6><ol>
-<li><p>typeof 能得到哪些类型（js变量类型）</p>
+          <h3 id="j-s-基础"><a href="#j-s-基础" class="headerlink" title="j s 基础"></a>j s 基础</h3><ol>
+<li><p>几个面试题</p>
 </li>
-<li><p>何时使用 === 何时使用 ==（强制类型转换）</p>
-</li>
-<li><p>window.onload  和  DomContentLoaded 的区别（浏览器渲染过程）</p>
-</li>
-<li><p>用js创建十个\&lt;a>列表点击弹出对应的序号（作用域）</p>
-</li>
-<li><p>简述如何实现一个<code>模块加载器</code>，实现类似require.js的基本功能（js模块化）</p>
-</li>
-<li><p>实现数组的随机排序（js基础算法）</p>
-<p>思考：</p>
-<ol>
-<li>拿到一二面试题，第一时间看到的是什么？ -&gt; 考点</li>
-<li>又如何看待网上搜出来的永远也看不完的题海？  -&gt; 不变应万变</li>
-<li>如何对待接下来的面试题？  -&gt; 题目到知识再到题目</li>
-</ol>
-</li>
-</ol>
-<h4 id="变量类型和计算"><a href="#变量类型和计算" class="headerlink" title="变量类型和计算"></a>变量类型和计算</h4><ol>
-<li>JS中使用typeof能得到哪些类型</li>
-<li>何时使用 === 何时使用 ==</li>
-<li>JS中有哪些内置函数(数据封装类型对象Object Array Boolean Number String Function Date RegExp Error)</li>
-<li>JS变量按照存储方式区分为哪些类型，并描述其特点（值类型   引用类型）</li>
-<li>如何理解JSON（json只不过是一个js对象有两个api也是一种数据格式 JSON.stringify({a:10, b: 20})   JSON.parse(‘{“a”: 10, “b”: 20}’)）</li>
-</ol>
-<p>变量类型</p>
-<p>值类型 ( 不会因为赋值而相互干扰 )   vs   引用类型（对象、数组、函数）</p>
-<p>typeof有哪些类型（undefined  string  number  boolean  object  function）</p>
-<p>typeof undefined //undefined</p>
-<p>typeof ‘abc’ //string</p>
-<p>typeof 1 //number</p>
-<p>typeof true //boolean</p>
-<p>typeof {} //object</p>
-<p>typeof [] //object</p>
-<p>typeof null //object</p>
-<p>typeof console.log //function</p>
-<p>变量计算  — 强制类型转换</p>
-<ol>
-<li>字符串拼接</li>
-<li>==运算符   （100 == ‘100’  0 == ‘ ‘  null == undefined）</li>
-<li>if语句</li>
-<li>逻辑运算符（&amp;&amp;   ||  ！）</li>
-</ol>
-
-          
+<li><p>如何搞定所有的面试题</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/20/js/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1504,62 +1260,12 @@
 
       
         
-          
-            <h3 id="vue生命周期-钩子函数"><a href="#vue生命周期-钩子函数" class="headerlink" title="vue生命周期(钩子函数)"></a>vue生命周期(钩子函数)</h3><hr>
-<ol>
-<li>create - mount - update - destroy 四个节点 每个节点有前后</li>
-<li>beforeCreate - created</li>
-<li>beforeMount - mounted</li>
-<li>beforeUpdate - updated</li>
-<li>beforeDestroy - destroyed()</li>
-</ol>
-<h3 id="vue开发环境安装配置"><a href="#vue开发环境安装配置" class="headerlink" title="vue开发环境安装配置"></a>vue开发环境安装配置</h3><hr>
-<ol>
-<li>node.js安装</li>
-<li>设置淘宝镜像 npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装vue脚手架 npm install -g vue-cli </li>
-<li>新建vue项目 vue init webpack name</li>
-<li>进入文件夹 把配置文件的插件安装一遍  npm i</li>
-<li>运行开发环境 npm run dev     /   npm start</li>
-<li>把项目编译成可以上线的静态html css js    npm run build</li>
-</ol>
-<h3 id="vue路由常用功能"><a href="#vue路由常用功能" class="headerlink" title="vue路由常用功能"></a>vue路由常用功能</h3><hr>
-<ol>
-<li><p>路由跳转</p>
-<blockquote>
-<p>在ruoter下面的index.js中配置</p>
-<blockquote>
-<p>先将需要跳转的页面导入依赖  <code>import index from &#39;@/components/index&#39;</code>    其中@代表的是src这个目录</p>
-<p>然后再在export default new Router里面配置路径 <figure class="highlight plain"><figcaption><span>'/',component: '/index'&#125;,&#123;path: '*', component: '/index'&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; 其中配置`path: &apos;*&apos; `可以使路由在输入没有的hash时重新定向到设置的页面</span><br><span class="line"></span><br><span class="line">2. 路由传参 </span><br><span class="line"></span><br><span class="line">   &gt; 1. 通过name传参 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;    &gt; </span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 2. 通过params传参</span><br><span class="line">   &gt;</span><br><span class="line">   &gt;    &gt; :绑定to name和路由中配置的一致，params通过key值调用</span><br><span class="line"></span><br><span class="line">3. 路由动画</span><br><span class="line"></span><br><span class="line">   &gt; 在template 中使用 transition 这个标签来放置动画的具体元素</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; `&lt;transition name=&apos;sport-name&apos;&gt;&lt;router-view&gt;&lt;/transition&gt;`</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 然后再style 中设置动画样式  其中</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; &gt; `.sprot-name-leave-active&#123;&#125;`设置刚切走的页面的最终样式</span><br><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; `.sport-name-enter&#123;&#125;`设置刚切入的页面的初始样式</span><br><span class="line"></span><br><span class="line">4. 路由回调函数</span><br><span class="line"></span><br><span class="line">   &gt; 路由局部前置钩子函数</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 在router里面的配置路径的地方加上 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>const router = new Router({<br>  routes: [</p>
-<pre><code>{
-  path: &apos;/&apos;,
-  name: &apos;index&apos;,
-  component: index,
-  beforeEnter: (to, from, next) =&gt; {
-    // console.log(&apos;我是路由配置里面的路由钩子函数-即将进入首页之前触发&apos;,to,from)
-    next()
-  }
-}
-</code></pre><p>  ]<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; 路由全局前置钩子函数</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>router.beforeEach(async (to, from, next) =&gt; {<br>  console.log(‘我是路由全局前置钩子函数-每次切换路由之前都触发’,to,from)<br>  // if(to.path != ‘/signin’){<br>  //   let res = await axios.get(‘/static/check.json’)<br>  //   res = res.data<br>  //   if(res == 1){<br>  //     next()<br>  //   }else{<br>  //     router.push(‘/signin’)<br>  //   }<br>  // }else{<br>  //   next()<br>  // }<br>  next()<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">   &gt;</span><br><span class="line">   &gt; 路由全局后置钩子函数</span><br><span class="line"></span><br><span class="line">5. 嵌套路由</span><br><span class="line"></span><br><span class="line">6. 单页面多路由区域操作</span><br><span class="line"></span><br><span class="line">   一个页面有多个router-view  ，先给router起名字，可以有一个不起名字作为默认</span><br><span class="line"></span><br><span class="line">7. </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 非父子组件传值</span><br><span class="line"></span><br><span class="line">1. 总线传值/发布订阅模式/观察者模式</span><br><span class="line">2. vuex</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 插槽slot</span><br><span class="line"></span><br><span class="line">组件在别处引用的时候，在引用的结构下写的内容可以通过slot在组件中显示 可以放html标签</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<p><template><br>    <rw-btn :type="primary" :round="true"><br>        默认按钮<br>    </rw-btn><br></template></p>
-<p><script><br>    import rw-btn from ‘@/components/rw-btn’<br>    export default {<br>        name: parent,<br>        component: {<br>            children<br>        }<br>    }<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p><template><br>    <button :class="{'primary': type=='primary', 'round': round}"><br>        <slot></slot><br>    </button><br></template></p>
-<p><script><br>    export default {<br>        name: children,<br>        props:[‘type’, ‘round’, ‘size’]<br>    }<br></script></p>
-<p><style scoped><br>    a {<br>        color: black;<br>    }<br></style><br><code>`</code></p>
-
-          
+          <p>vue钩子函数和开发环境配置以及路由常用功能
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/20/vue/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

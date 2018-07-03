@@ -306,90 +306,12 @@
 
       
         
-          
-            <h3 id="vue生命周期-钩子函数"><a href="#vue生命周期-钩子函数" class="headerlink" title="vue生命周期(钩子函数)"></a>vue生命周期(钩子函数)</h3><hr>
-<ol>
-<li>create - mount - update - destroy 四个节点 每个节点有前后</li>
-<li>beforeCreate - created</li>
-<li>beforeMount - mounted</li>
-<li>beforeUpdate - updated</li>
-<li>beforeDestroy - destroyed()</li>
-</ol>
-<h3 id="vue开发环境安装配置"><a href="#vue开发环境安装配置" class="headerlink" title="vue开发环境安装配置"></a>vue开发环境安装配置</h3><hr>
-<ol>
-<li>node.js安装</li>
-<li>设置淘宝镜像 npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装vue脚手架 npm install -g vue-cli </li>
-<li>新建vue项目 vue init webpack name</li>
-<li>进入文件夹 把配置文件的插件安装一遍  npm i</li>
-<li>运行开发环境 npm run dev     /   npm start</li>
-<li>把项目编译成可以上线的静态html css js    npm run build</li>
-</ol>
-<h3 id="vue路由常用功能"><a href="#vue路由常用功能" class="headerlink" title="vue路由常用功能"></a>vue路由常用功能</h3><hr>
-<ol>
-<li><p>路由跳转</p>
-<blockquote>
-<p>在ruoter下面的index.js中配置</p>
-<blockquote>
-<p>先将需要跳转的页面导入依赖  <code>import index from &#39;@/components/index&#39;</code>    其中@代表的是src这个目录</p>
-<p>然后再在export default new Router里面配置路径 <figure class="highlight plain"><figcaption><span>'/',component: '/index'&#125;,&#123;path: '*', component: '/index'&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; 其中配置`path: &apos;*&apos; `可以使路由在输入没有的hash时重新定向到设置的页面</span><br><span class="line"></span><br><span class="line">2. 路由传参 </span><br><span class="line"></span><br><span class="line">   &gt; 子路由中可以使用 this.$route.params.id来接收传过来的参数</span><br><span class="line"></span><br><span class="line">3. 路由动画</span><br><span class="line"></span><br><span class="line">   &gt; 在template 中使用 transition 这个标签来放置动画的具体元素</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; `&lt;transition name=&apos;sport-name&apos;&gt;&lt;router-view&gt;&lt;/transition&gt;`</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 然后再style 中设置动画样式  其中</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; &gt; `.sprot-name-leave-active&#123;&#125;`设置刚切走的页面的最终样式</span><br><span class="line">   &gt; &gt;</span><br><span class="line">   &gt; &gt; `.sport-name-enter&#123;&#125;`设置刚切入的页面的初始样式</span><br><span class="line"></span><br><span class="line">4. 路由回调函数</span><br><span class="line"></span><br><span class="line">   &gt; 1 在index.js中设置</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 路由局部前置钩子函数</span><br><span class="line">   &gt;</span><br><span class="line">   &gt; 在router里面的配置路径的地方加上 </span><br><span class="line">   &gt;</span><br><span class="line">   &gt;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>const router = new Router({<br>  routes: [</p>
-<pre><code>{
-  path: &apos;/&apos;,
-  name: &apos;index&apos;,
-  component: index,
-  beforeEnter: (to, from, next) =&gt; {
-    // console.log(&apos;我是路由配置里面的路由钩子函数-即将进入首页之前触发&apos;,to,from)
-    next()
-  }
-},
-{
-  path: &apos;/product/:id&apos;,
-  name: &apos;product&apos;,
-  component: product,
-  beforeEnter: (to, from, next) =&gt; {
-    // console.log(&apos;我是路由配置里面的路由钩子函数-即将进入商品页之前触发&apos;,to,from)
-    next()
-  }
-},
-{
-  path: &apos;/signin&apos;,
-  name: &apos;signin&apos;,
-  component: signin,
-  beforeEnter: (to, from, next) =&gt; {
-    // console.log(&apos;我是路由配置里面的路由钩子函数-即将进入商品页之前触发&apos;,to,from)
-    next()
-  }
-}
-</code></pre><p>  ]<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; 路由全局前置钩子函数</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>router.beforeEach(async (to, from, next) =&gt; {<br>  console.log(‘我是路由全局前置钩子函数-每次切换路由之前都触发’,to,from)<br>  // if(to.path != ‘/signin’){<br>  //   let res = await axios.get(‘/static/check.json’)<br>  //   res = res.data<br>  //   if(res == 1){<br>  //     next()<br>  //   }else{<br>  //     router.push(‘/signin’)<br>  //   }<br>  // }else{<br>  //   next()<br>  // }<br>  next()<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; 路由全局后置钩子函数</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>router.afterEach((to, from) =&gt; {<br>  console.log(‘我是路由全局后置钩子函数-每次切换路由之后都触发’,to,from)<br>})</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; 2 在components的组件vue文件中设置</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
-<p>beforeRouteEnter: (to, from, next) =&gt; {<br>   console.log(‘我是首页组件里面的路由钩子函数-路由即将要进入首页之前触发’,to,from)<br>   next()<br>},<br>beforeRouteLeave: (to, from, next) =&gt; {<br>   console.log(‘我是首页组件里面的路由钩子函数-路由即将要离开首页之前触发’,to,from)<br>   next()<br>}</p>
-<p>beforeRouteUpdate : (to, from, next) =&gt; {<br>   console.log(‘我是产品页组件里面的路由钩子函数-路由参数发生变化之前触发’,to,from)<br>   next()<br>}<br><code>`</code></p>
-</blockquote>
-<p>总结： </p>
-<p>路由回调函数： 在切换路由之前触发以及切换路由之后触发，router中配置的</p>
-</li>
-<li><p>嵌套路由</p>
-<blockquote>
-<p>嵌套路由之父路由向子路由传递对象数据</p>
-</blockquote>
-</li>
-</ol>
-
-          
+          <p>vue钩子函数和开发环境配置以及路由常用功能
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/20/vue生命周期(钩子函数)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -594,18 +516,12 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/11/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
